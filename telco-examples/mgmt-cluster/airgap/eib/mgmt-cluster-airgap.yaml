@@ -65,6 +65,13 @@ kubernetes:
         createNamespace: true
         installationNamespace: kube-system
         valuesFile: rancher.yaml
+      - name: rancher-turtles
+        version: 0.2.0+up0.11.0
+        repositoryName: suse-edge-gh-charts
+        targetNamespace: rancher-turtles-system
+        createNamespace: true
+        installationNamespace: kube-system
+        valuesFile: turtles.yaml
     repositories:
       - name: jetstack
         url: https://charts.jetstack.io
@@ -74,6 +81,8 @@ kubernetes:
         url: oci://registry.suse.com/edge
       - name: rancher-prime
         url: https://charts.rancher.com/server-charts/prime
+      - name: suse-edge-gh-charts
+        url: https://suse-edge.github.io/charts/
 embeddedArtifactRegistry:
   images:
     - name: registry.rancher.com/rancher/backup-restore-operator:v4.0.2
